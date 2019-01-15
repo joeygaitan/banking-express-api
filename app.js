@@ -5,7 +5,7 @@ const morgan = require('morgan')
 const port =  process.env.PORT || 3000
 
 //routes to api
-app.use('/interfaces', require('./routes/bankAccounts'))
+app.use('/interfaces', require('./MVC/routes/bankAccounts'))
 
 //if the route isn't found
 app.use((req, res, next) => next({status: 404, message: 'Route not found.'}))
