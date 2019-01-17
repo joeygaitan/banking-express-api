@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "paying off my brother for causing his wifes funeral",
+        "Amount": 5,
+        "Pending": false
+    },
+    {
+        "id": 2,
+        "title": "This one was for crashing the car at the bar",
+        "Amount": 7,
+        "Pending": false
+    }
+]

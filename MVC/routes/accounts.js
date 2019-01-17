@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const interfacesController = require('../controllers/interfaces')
+const interfacesController = require('../controllers/accounts')
 
 router.get('/', interfacesController.getAll)
 
@@ -10,6 +10,7 @@ router.post('/', interfacesController.create)
 
 router.put('/:id', interfacesController.update)
 
-router.delete('/:id', interfacesController.remove)
+router.delete('/:id', interfacesController.deleteOne)
+
 
 module.exports = router;
