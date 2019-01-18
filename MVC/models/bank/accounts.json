@@ -1,23 +1,19 @@
 [
     {
-        "name": "thebank",
-        "bank": "The Union",
-        "desc": "stuff and things",
-        "id": 1,
-        "transactionsId": []
-    },
-    {
         "bank": "union",
         "desc": "stuff and things",
         "name": "thebank",
-        "id": 2,
-        "transactionsId": []
+        "id": 1,
+        "transactions": [
+            1,
+            "8698e38b-7243-4873-91e4-58cb44c8215b"
+        ]
     },
     {
         "bank": "the bank",
         "desc": "stuff and things",
         "name": "hello",
-        "id": 3,
+        "id": 2,
         "transactions": []
     }
 ]

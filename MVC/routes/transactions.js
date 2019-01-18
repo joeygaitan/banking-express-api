@@ -1,13 +1,13 @@
 const express = require('express')
-const router = express.Router()
+const router = express.Router({mergeParams: true})
 const interFaceController = require('../controllers/transactions')
 
-// router.post('/transactions', interFaceController.create)
+router.post('/transactions', interFaceController.create)
 
-router.get('/transactions/:transactionsId', interFaceController.getOne)
+router.get('/transactions/:transactionid', interFaceController.getOne)
 
-// router.patch('/transactions/:transactionsId', interFaceController.edit)
+router.patch('/transactions/:transactionsId', interFaceController.update)
 
-// router.delete('/delete/:transactionsId', interFaceController.delete)
+router.delete('/transactions/:transactionid', interFaceController.remove)
 
 module.exports = router

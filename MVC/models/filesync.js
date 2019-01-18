@@ -3,10 +3,10 @@ const path = require('path')
 
 const filesync = (action, file, val) => {
   if (action === 'read') {
-    return JSON.parse(fs.readFileSync(path.join(__dirname, './bank') + file, 'utf8'))
+    return JSON.parse(fs.readFileSync(path.join(__dirname, 'bank',file), 'utf8'))
   }
   if (action === 'write') {
-    fs.writeFileSync(path.join(__dirname, './bank') + file, JSON.stringify(val, null, 4))
+    fs.writeFileSync(path.join(__dirname, 'bank',file), JSON.stringify(val, null, 4))
   }
 }
 

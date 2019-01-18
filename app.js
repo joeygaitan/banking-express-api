@@ -7,8 +7,7 @@ const port =  process.env.PORT || 3000
 //routes to accounts api
 app.use(bodyParser.json())
 app.use('/accounts', require('./MVC/routes/accounts'))
-
-app.use('/transactions', require('./MVC/routes/transactions'))
+app.use('/accounts/:id', require('./MVC/routes/transactions'))
 //route to transactions api
 
 //if the route isn't found
@@ -16,6 +15,7 @@ app.use((req, res, next) => next({status: 404, message: 'Route not found.'}))
 
 //the error handler just in case
 app.use((err, req, res, next) => {
+    console.log(err)
     const errorMessage = {}
 
     if(process.env.NODE_ENV !== 'production' && err.stack)
