@@ -16,7 +16,7 @@ function getOne(id){
     const accounts = file.filesync('read', '/accounts.json')
     const error = []
     
-    const account = accounts.find(acc => acc.id === id)
+    const account = accounts.find(acc => acc.id == id)
     
     if(!account){
         error.push('the bank you are looking for does not exist')

@@ -18,6 +18,7 @@ function create(id, body){
     const transactions = file.filesync('read', 'transactions.json')
     const accounts = file.filesync('read', '/accounts.json')
     const account = accounts.find(acc=>id===acc.id)
+    const accountIndex = accounts.findIndex(acc=> account === acc)
     const { amount, title } = body
     const error = []
     if(!account){
@@ -31,7 +32,7 @@ function create(id, body){
     }
     
     const transaction = { "amount": amount, pending: true, "id": uuidv4(), "title": title}
-    account.transactions.push(transaction.id)
+    accounts[accountIndex].transactions.push(transaction)
     transactions.push(transaction)
     file.filesync('write', 'transactions.json', transactions)
     file.filesync('write', 'accounts.json', accounts)
@@ -42,6 +43,7 @@ function create(id, body){
 function update(tranid, body){
     const transactions = file.filesync('read', 'transactions.json')
     const transaction = transactions.find(tran => tran.id == tranid)
+    const transactionIndex = transactions.findIndex(tran=> tran === transaction)
     const error = []
     const { title, pending} = body
 
@@ -50,8 +52,8 @@ function update(tranid, body){
         return { error }
     }
 
-    transaction.title = title
-    transaction.pending = pending
+    transactions[transactionIndex].title = title
+    transactions[transactionIndex].pending = pending
     file.filesync('write', 'transactions.json', transactions)
 
     return transaction
