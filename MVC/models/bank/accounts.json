@@ -1,8 +1,6 @@
 [
     {
-        "bank": "union",
-        "desc": "stuff and things",
-        "name": "thebank",
+        "desc": "please change",
         "id": 1,
         "transactions": [
             1,

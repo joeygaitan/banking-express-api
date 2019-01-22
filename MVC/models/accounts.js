@@ -49,8 +49,11 @@ function update(id, body){
     const accounts = file.filesync('read', '/accounts.json')
     const error = []
     const { bank,desc,name } = body
-    const account = accounts.find(acc => acc.id === id)
-    
+    const account = accounts.find(acc => acc.id == id)
+    console.log(account);
+    // const accountIndex = accounts.findIndex(acc => acc.id === id)
+    // const account = accounts[accountIndex]
+
     account.bank = bank
     account.desc = desc
     account.name = name
